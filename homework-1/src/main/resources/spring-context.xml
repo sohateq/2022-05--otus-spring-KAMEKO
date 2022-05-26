@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="questionScreen" class="service.QuestionScreenImpl">
+    </bean>
+
+    <bean id="questionService" class="service.QuestionServiceImpl">
+        <constructor-arg name="questionScreen" ref="questionScreen"/>
+        <constructor-arg name="resPath" value="classpath:questions.csv"/>
+    </bean>
+</beans>
